@@ -25,7 +25,7 @@ public class BTNfield{
 	BTNfield(int w, int x, int y, int z){
 		current = counter;
 		button.setBounds(w, x, y, z);		
-		bLabel.setBounds(w, x, y+1, z);
+		bLabel.setBounds(w+2, x, y+1, z);
 		bLabel.setIcon(new ImageIconScale("bombe",23).getImage());
 		nLabel.setBounds(w+9, x, y, z);
 		counter++;
@@ -39,7 +39,7 @@ public class BTNfield{
 					isFlag = false;	
 					LBLcounter.setCounter(1);
 				// sonst füge fahne hinzu	
-				} else {
+				} else if(LBLcounter.getCounter()>0) {
 					button.setIcon(new ImageIconScale("fahne",23).getImage());
 					isFlag = true;				
 					LBLcounter.setCounter(-1);
@@ -59,6 +59,7 @@ public class BTNfield{
 							ArrayField.initNumber();
 						}
 						start = true;
+				    	BTNnew.setEnabled(true);
 					}
 					
 					if(ArrayElement.getFeld().get(current).getBoolNumber()) {
@@ -67,16 +68,19 @@ public class BTNfield{
 						for(Integer s:x) {
 							ArrayField.getList().get(s).button.setVisible(false);
 						}
+						win();
 						FreeField.clearStorage();
 						x.clear();
-					} else button.setVisible(false);
+					} else {
+						button.setVisible(false);
+						win();
+					}
 					
 					
 					
 					// sonst enable BTNneu und decke alle restlichen bomben auf
 				    if(ArrayElement.getBomb(current)) {
 				    	System.out.println("Du bist auf eine Bombe getreten!");
-				    	BTNnew.setEnabled(true);
 				    	end = true;
 				    	BTNflag.setEnabled(false);
 				    	for(int i=0; i<200; i++) {
@@ -84,11 +88,24 @@ public class BTNfield{
 				    			ArrayField.getList().get(i).button.setVisible(false);
 				    		}
 				    	}
+				    	for(int i=0; i<200;i++) {
+							ArrayField.getList().get(i).getButton().setEnabled(false);
+						}
 				    }
 				}
 			}
 		}
 	});
+	}
+	private void win() {
+		if(ArrayField.getRemain()) {
+			System.out.println("Sieg!");
+			end = true;
+			for(int i=0; i<200;i++) {
+				ArrayField.getList().get(i).getButton().setEnabled(false);
+			}
+			LBLwin.add();
+		}
 	}
 	public JButton getButton() {
 		return button;
@@ -140,5 +157,11 @@ public class BTNfield{
 	}
 	public JLabel getNlabel() {
 		return nLabel;
+	}
+	public static boolean getStart() {
+		return start;
+	}
+	public static boolean getEnd() {
+		return end;
 	}
 }
