@@ -2,11 +2,9 @@ package common;
 
 public class Element {
 	private boolean bomb;
-	private boolean cover;
 	private int number;
 	Element(){
 		bomb = false;
-		cover = true;
 		number = 0;
 	}
 	public boolean getBomb() {
@@ -15,9 +13,6 @@ public class Element {
 	public void setBomb() {
 		bomb = true;
 		number = -1;
-	}
-	public boolean getCover() {
-		return cover;
 	}
 	public void deleteBomb() {
 		bomb = false;
