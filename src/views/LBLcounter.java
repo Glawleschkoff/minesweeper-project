@@ -1,5 +1,7 @@
 package views;
 
+import java.awt.Font;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -11,7 +13,8 @@ public class LBLcounter {
 	private static int counter = ArrayElement.getY();
 	
 	public LBLcounter(JPanel panel) {
-		lblCounter.setBounds(118, 0, 118, 30);
+		lblCounter.setBounds(145, 0, 118, 30);
+		lblCounter.setFont(new Font("Arial", Font.BOLD, 20));
 		panel.add(lblCounter);
 		lblCounter.setText(String.valueOf("Bomben: " + counter));
 	}
@@ -22,6 +25,9 @@ public class LBLcounter {
 	public static void reset() {
 		counter = ArrayElement.getY();
 		lblCounter.setText(String.valueOf("Bomben: " + counter));
+	}
+	public static int getCounter() {
+		return counter;
 	}
 
 }
