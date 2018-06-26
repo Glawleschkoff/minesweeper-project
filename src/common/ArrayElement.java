@@ -4,23 +4,21 @@ import java.util.ArrayList;
 
 public class ArrayElement {
 	private static ArrayList<Element> list = new ArrayList<Element>(200);
-	private int x;
 	private static int y;
 	public ArrayElement(int l){
-		x=l;
 		for(int i=0; i<200; i++) {
 			list.add(new Element());
 		}
 		int x;
 		switch(l) {
-			case 1: x = 20;
-					y = 20;
+			case 1: x = 11;
+					y = 11;
 			break;
-			case 2: x = 50;
-					y = 50;
+			case 2: x = 18;
+					y = 18;
 			break;
-			case 3: x = 80;
-					y = 80;	
+			case 3: x = 39;
+					y = 39;	
 			break;
 			case 4: x = 1;
 					y = 1;
@@ -40,9 +38,6 @@ public class ArrayElement {
 	}
 	public static boolean getBomb(int i) {
 		return list.get(i).getBomb();
-	}
-	public int getL() {
-		return x;
 	}
 	public static ArrayList<Element> getFeld() {
 		return list;
