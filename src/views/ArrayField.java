@@ -2,23 +2,23 @@ package views;
 
 import java.util.ArrayList;
 
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 import common.ArrayElement;
 
 public class ArrayField {
 	private static ArrayList<BTNfield> list = new ArrayList<BTNfield>(200);
-	public ArrayField(JPanel panel) {
+	public ArrayField(JLayeredPane panel) {
 		for(int i = 0; i<200; i++) {
 			for(int a = 60; a<640; a = a+28) {
 				for(int b = 0; b<280; b = b+28) {
 					list.add(new BTNfield(b,a,29,29));
-					panel.add(list.get(i).getButton());
+					panel.add(list.get(i).getButton(),1);
 					if(ArrayElement.getBomb(i)==true) {
-						panel.add(list.get(i).getBlabel());
+						panel.add(list.get(i).getBlabel(),2);
 					}
 					if(ArrayElement.getFeld().get(i).getNumber()!=0) {
-						panel.add(list.get(i).getNlabel(i));
+						panel.add(list.get(i).getNlabel(i),2);
 					}
 				}
 			}
@@ -27,7 +27,7 @@ public class ArrayField {
 	public static ArrayList<BTNfield> getList() {
 		return list;
 	}
-	public static void reset(JPanel panel) {
+	public static void reset(JLayeredPane panel) {
 		for(int i = 0; i<200; i++) {
 			panel.remove(list.get(i).getBlabel());
 			panel.remove(list.get(i).getButton());
@@ -39,7 +39,7 @@ public class ArrayField {
 		list.clear();
 	}
 	
-	public static void neu(JPanel panel) {
+	public static void neu(JLayeredPane panel) {
 		int i = 0;
 		for(int a = 60; a<640; a = a+28) {
 			for(int b = 0; b<280; b = b+28) {

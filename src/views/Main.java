@@ -1,9 +1,10 @@
 package views;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
@@ -12,7 +13,7 @@ import common.ArrayElement;
 public class Main extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private static JPanel contentPane;
+	private static JLayeredPane contentPane;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			@Override
@@ -28,10 +29,10 @@ public class Main extends JFrame {
 	}
 	public Main() {
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		setBounds(200, 200, 296, 658);
+		setBounds(1000, 200, 296, 658);
 		setTitle("Bombenjagd");
 		setResizable(false); 
-		contentPane = new JPanel();
+		contentPane = new JLayeredPane();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -46,7 +47,7 @@ public class Main extends JFrame {
 	public static void setFeld() {
 		new ArrayElement(BTNlevel.getNum());
 	}
-	public static JPanel getJPanel() {
+	public static JLayeredPane getJPanel() {
 		return contentPane;
 	}
 }

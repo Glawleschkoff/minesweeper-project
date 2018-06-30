@@ -5,13 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class BTNlevel {
 	private JButton btnLevel = new JButton("Novize");
 	private static int num = 1;
 	private String name;
-	public BTNlevel(JPanel panel) {
+	public BTNlevel(JLayeredPane panel) {
 		panel.add(btnLevel);
 		btnLevel.setBounds(117, 29, 164, 31);
 		btnLevel.setFont(new Font("Arial", Font.ITALIC, 20));

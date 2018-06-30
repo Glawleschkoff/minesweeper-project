@@ -14,11 +14,11 @@ public class ArrayElement {
 			case 1: x = 11;
 					y = 11;
 			break;
-			case 2: x = 18;
-					y = 18;
+			case 2: x = 15;
+					y = 15;
 			break;
-			case 3: x = 39;
-					y = 39;	
+			case 3: x = 19;
+					y = 19;	
 			break;
 			case 4: x = 1;
 					y = 1;

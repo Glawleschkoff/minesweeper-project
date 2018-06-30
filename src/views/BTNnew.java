@@ -4,21 +4,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 import common.ArrayElement;
 import resources.ImageIconScale;
 
 public class BTNnew {
 	private static JButton btnNew = new JButton("");
-	private static JPanel pane;
-	public BTNnew(JPanel panel) {
+	private static JLayeredPane pane;
+	public BTNnew(JLayeredPane panel) {
 		pane = panel;
 		panel.add(btnNew);
 		btnNew.setBounds(58, 1, 59, 59);
 		btnNew.setEnabled(false);
 		btnNew.setIcon(new ImageIconScale("neu",60).getImage());
-		
 		btnNew.addActionListener(new ActionListener() {
 
 			@Override
