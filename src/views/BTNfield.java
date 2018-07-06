@@ -105,6 +105,7 @@ public class BTNfield{
 				ArrayField.getList().get(i).getButton().setEnabled(false);
 			}
 			LBLwin.add();
+			BTNflag.setEnabled(false);
 		}
 	}
 	public JButton getButton() {

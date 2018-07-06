@@ -43,5 +43,6 @@ public class BTNnew {
 		LBLcounter.reset();
 		BTNflag.setUnPressed();
 		LBLwin.remove();
+		BTNnew.setEnabled(true);
 	}
 }
