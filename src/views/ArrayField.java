@@ -10,6 +10,7 @@ public class ArrayField {
 	private static ArrayList<BTNfield> list = new ArrayList<BTNfield>(200);
 	public ArrayField(JLayeredPane panel) {
 		for(int i = 0; i<200; i++) {
+			System.out.print(i);
 			for(int a = 60; a<640; a = a+28) {
 				for(int b = 0; b<280; b = b+28) {
 					list.add(new BTNfield(b,a,29,29));
@@ -59,11 +60,11 @@ public class ArrayField {
 	}	
 	public static void initNumber() {
 		for(int i=0; i<200; i++) {
-			Main.getJPanel().remove(list.get(i).getNlabel(i));
+			Main2.getJPanel().remove(list.get(i).getNlabel(i));
 		}
 		for(int i=0; i<200; i++) {
 			if(ArrayElement.getFeld().get(i).getNumber()!=0) {
-				Main.getJPanel().add(list.get(i).getNlabel(i));
+				Main2.getJPanel().add(list.get(i).getNlabel(i));
 			}
 		}
 	}

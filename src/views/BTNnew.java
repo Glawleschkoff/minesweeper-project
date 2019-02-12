@@ -33,7 +33,7 @@ public class BTNnew {
 		ArrayField.reset(pane);
 		ArrayField.clear();
 		ArrayElement.getFeld().clear();
-		Main.setFeld();
+		Main2.setFeld();
 		BTNfield.setR();
 		ArrayField.neu(pane);
 		btnNew.setEnabled(false);
